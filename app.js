@@ -90,3 +90,50 @@ console.log(removeDupes("abcd")); // -> 'abcd'
 console.log(removeDupes("aabbccdd")); // -> 'abcd'
 console.log(removeDupes("abcddbca")); // -> 'abcd'
 console.log(removeDupes("abababcdcdcd")); // -> 'abcd'
+
+/*
+Вам будет предоставлен массив объектов, передоставленые данные о разработчиках которые подписовались, на участие 
+следующей встречи программистов, которые вы организуете
+*/
+
+const list = [
+  {
+    firstName: "Iskandar",
+    lastName: "Gadoyboev",
+    country: "Tajikistan",
+    age: 32,
+    language: "JavaScript",
+  },
+  {
+    firstName: "Akbar",
+    lastName: "Khushnourov",
+    country: "Dushanbe",
+    age: 26,
+    language: "C",
+  },
+  {
+    firstName: "Bakhodur",
+    lastName: "Kandikov",
+    country: "Dushanbe",
+    age: 32,
+    language: "Ruby",
+  },
+  {
+    firstName: "Hasan",
+    lastName: "Soliev",
+    country: "Istaravshan",
+    age: 26,
+    language: "C",
+  },
+];
+
+const countLanguages = (list) => {
+  let count = {};
+  list.forEach((el) => {
+    count[el.language] = (count[el.language] || 0) + 1;
+  });
+
+  return count;
+};
+
+console.log(countLanguages(list));
