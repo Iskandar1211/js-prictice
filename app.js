@@ -137,3 +137,32 @@ const countLanguages = (list) => {
 };
 
 console.log(countLanguages(list));
+
+/**
+ * Function to count the occurrences of different programming languages in a list.
+ * @param {Array} list - An array of objects, each representing a developer's information.
+ * @return {Object} - An object with the count of occurrences for each language.
+ */
+const countLanguagesTwo = (list) => {
+  // Initialize variables to count the occurrences of each language
+  let C = 0;
+  let JavaScript = 0;
+  let Ruby = 0;
+
+  // Iterate over each element in the list
+  for (const lang of list) {
+    // Check the language and increment the respective counter
+    if (lang.language === "C") {
+      C++;
+    } else if (lang.language === "JavaScript") {
+      JavaScript++;
+    } else {
+      Ruby++;
+    }
+  }
+
+  // Return the count of occurrences for each language
+  return { C, JavaScript, Ruby };
+};
+
+console.log("countLanguagesTwo", countLanguagesTwo(list));
