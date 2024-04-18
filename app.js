@@ -166,3 +166,65 @@ const countLanguagesTwo = (list) => {
 };
 
 console.log("countLanguagesTwo", countLanguagesTwo(list));
+
+/*
+Реализуйте функцию, которая складывает два числа и возвращает их сумму в двоичном виде.
+Преобразование может быть выполнено до или после добавления.
+Возвращаемое двоичное число должно быть строкой.
+*/
+
+function addBinary(a, b) {
+  return (a + b).toString(2);
+}
+
+console.log("addBinary", addBinary(1, 2));
+
+/*
+Тролли атакуют ваш раздел комментариев!
+Распространенный способ справиться с этой ситуацией — удалить все гласные из комментариев троллей, нейтрализуя угрозу.
+Ваша задача — написать функцию, которая принимает строку и возвращает новую строку, из которой удалены все гласные.
+Например, строка «Этот сайт для неудачников LOL!» станет «Ths wbst s fr lsrs LL!».
+Примечание: для этой ката yне считается гласной.
+*/
+
+function disemvowel(str) {
+  return str
+    .split("")
+    .filter((char) => !"aeiouAEIOU".includes(char))
+    .join("");
+}
+
+console.log("disemvowel", disemvowel("This website is for losers LOL!"));
+
+/*
+Камень ножницы Бумага
+Давайте играть! Вы должны вернуть, какой игрок выиграл! В случае ничьей возврат Draw!.
+*/
+
+const rps = (p1, p2) => {
+  if (p1 === p2) {
+    return "Draw!";
+  } else if (p1 === "scissors" && p2 === "paper") {
+    return "Player 1 won!";
+  } else if (p1 === "rock" && p2 === "scissors") {
+    return "Player 1 won!";
+  } else if (p1 === "paper" && p2 === "rock") {
+    return "Player 1 won!";
+  } else if (p1 === "scissors" && p2 === "rock") {
+    return "Player 2 won!";
+  } else if (p1 === "paper" && p2 === "scissors") {
+    return "Player 2 won!";
+  } else if (p1 === "rock" && p2 === "paper") {
+    return "Player 2 won!";
+  }
+};
+
+const rps2 = (p1, p2) => {
+  if (p1 === p2) return "Draw!";
+  var rules = { rock: "scissors", paper: "rock", scissors: "paper" };
+  if (p2 === rules[p1]) {
+    return "Player 1 won!";
+  } else {
+    return "Player 2 won!";
+  }
+};
